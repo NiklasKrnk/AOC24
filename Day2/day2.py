@@ -5,14 +5,11 @@ data = pd.read_csv("data.txt", header=None)
 def check(rep):
     return all(3 >= r[i] - r[i+1] >= 1  for i in range(len(r)-1)) or all(-1 >= r[i] - r[i+1] >= -3  for i in range(len(r)-1))
 
-errors = []
 count = 0
 for r in data[0]:
     r = list(map(int, r.split()))
     if check(r): 
         count += 1
-    else: 
-        errors.append(r)
 print(count)
 
 #----------------2---------------#
