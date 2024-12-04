@@ -5,9 +5,7 @@ with open("data.txt", "r") as file:
 def mul(x,y):
     return x*y
 x = re.findall(r"mul\(\d{0,3},\d{0,3}\)", txt)
-
-count1 = sum(eval(i) for i in x)
-print(f"count {count1}")
+print(f"count {sum(eval(i) for i in x)}")
 
 #---------------------2--------------------------#
 while(True):
@@ -15,6 +13,4 @@ while(True):
     if not match: break
     txt = txt[:match.start()] + txt[match.end():]
 x2 = re.findall(r"mul\(\d{0,3},\d{0,3}\)", txt)
-
-count2 = sum(eval(i) for i in x2)
-print(f"count 2 {count2}")
+print(f"count 2 {sum(eval(i) for i in x2)}")
